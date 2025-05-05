@@ -4,13 +4,18 @@ import { pxToRem } from '../../utils/font.ts'
 import { Socials } from '../socials.component.tsx'
 
 export const FooterContainer = styled.div`
+  position: sticky;
+  bottom: 0;
+  width: calc(100% - 129px);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 52px 48px 48px 81px;
   background-color: #06020c;
+  z-index: 1000;
 
   @media (max-width: 991px) {
+    width: calc(100% - 88px);
     flex-direction: column;
     gap: 16px;
     padding: 16px 44px 30px;
@@ -37,6 +42,10 @@ export const DocLinkWrapper = styled.div`
   display: flex;
   gap: 35px;
   align-items: center;
+
+  @media (max-width: 399px) {
+    gap: 16px;
+  }
 `
 
 export const DocLink = styled.a`

@@ -17,4 +17,9 @@ export const Button = styled.button`
   font-size: ${pxToRem(10)};
   font-weight: bold;
   line-height: 1;
+  justify-self: end;
+
+  @media (max-width: 991px) {
+    margin: auto;
+  }
 `

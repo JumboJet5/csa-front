@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router'
 import { Layout } from './layout'
+import { Main } from './pages/main'
 
 export function App() {
   return (
@@ -15,9 +16,7 @@ export function App() {
 const Pages: FC = () => {
   return (
     <Routes>
-      <Route path="/" element={<Empty />}></Route>
+      <Route path="/" element={<Main />}></Route>
     </Routes>
   )
 }
-
-const Empty: FC = () => <></>
