@@ -1,11 +1,12 @@
 import { FC } from 'react'
-import SteamUrl from '../../assets/partners/steam.svg?url'
+import styled from 'styled-components'
+import CoinlistUrl from '../../assets/partners/coinlist.svg?url'
 import FnaticUrl from '../../assets/partners/fnatic.svg?url'
 import NavyEsportsUrl from '../../assets/partners/navy-esports.svg?url'
-import CoinlistUrl from '../../assets/partners/coinlist.svg?url'
+import SteamUrl from '../../assets/partners/steam.svg?url'
 import ValveUrl from '../../assets/partners/valve.svg?url'
-import styled from 'styled-components'
 import { pxToRem } from '../../utils/font.ts'
+import { SectionTitle } from './styles.ts'
 
 export const OurPartners: FC = () => {
   return (
@@ -43,23 +44,9 @@ const OurPartnersContainer = styled.div`
     grid-gap: 30px;
   }
 `
-const TitleWrapper = styled.div`
+const TitleWrapper = styled(SectionTitle)`
   display: grid;
   grid-gap: 20px;
-  font-family: Changa, sans-serif;
-  font-size: ${pxToRem(84)};
-  font-weight: bold;
-  line-height: 50px;
-  text-shadow: 0 0 25px white;
-
-  @media (max-width: 1399px) {
-    font-size: ${pxToRem(72)};
-  }
-
-  @media (max-width: 1199px) {
-    font-size: ${pxToRem(64)};
-    line-height: 44px;
-  }
 
   @media (max-width: 991px) {
     font-size: ${pxToRem(32)};
@@ -170,6 +157,10 @@ const PartnersContainer = styled.div`
     .navy-esports {
       transform: none;
     }
+  }
+
+  @media (max-width: 499px) {
+    width: min(320px, 100%);
   }
 `
 const Separator = styled.div`

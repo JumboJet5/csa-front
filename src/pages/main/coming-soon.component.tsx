@@ -1,6 +1,6 @@
 import { FC } from 'react'
-import ComingSoonImgUrl from '../../assets/large-images/coming-soon-img.png?url'
 import styled from 'styled-components'
+import ComingSoonImgUrl from '../../assets/large-images/coming-soon-img.png?url'
 import { pxToRem } from '../../utils/font.ts'
 
 export const ComingSoon: FC = () => {
@@ -44,6 +44,10 @@ const ComingSoonImg = styled.img`
 
   @media (max-width: 991px) {
     justify-self: center;
+  }
+
+  @media (max-width: 499px) {
+    max-width: 320px;
   }
 `
 

@@ -1,8 +1,9 @@
 import { FC } from 'react'
+import styled from 'styled-components'
 import AboutTokenImgUrl from '../../assets/large-images/about-token-img.png?url'
 import LogoIcon from '../../assets/logo/icon-logo.svg?react'
-import styled from 'styled-components'
 import { pxToRem } from '../../utils/font.ts'
+import { ListItem, ListWrapper, SectionTitle, Separator } from './styles.ts'
 
 export const AboutToken: FC = () => {
   return (
@@ -55,14 +56,23 @@ const AboutTokenImg = styled.img`
 
 const TextContainer = styled.div`
   justify-self: right;
-  width: 464px;
+  width: 100%;
+  max-width: 464px;
+
+  ${Separator} {
+    margin: 30px 0;
+  }
 
   @media (max-width: 1399px) {
-    width: 412px;
+    max-width: 412px;
   }
 
   @media (max-width: 991px) {
     justify-self: center;
+
+    ${Separator} {
+      margin: 16px 0;
+    }
   }
 `
 
@@ -78,64 +88,43 @@ const Title = styled.h2`
   text-align: right;
 
   @media (max-width: 1399px) {
+    font-size: ${pxToRem(40)};
+  }
+
+  @media (max-width: 1199px) {
     font-size: ${pxToRem(36)};
+    line-height: 44px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: ${pxToRem(28)};
+    line-height: 24px;
+  }
+
+  @media (max-width: 499px) {
+    font-size: ${pxToRem(24)};
+    line-height: 24px;
   }
 `
 
-const Subtitle = styled.h2`
-  text-align: right;
-  font-family: Changa, sans-serif;
-  font-size: ${pxToRem(84)};
-  font-weight: bold;
-  line-height: 50px;
-  letter-spacing: 1.3px;
-  margin: 0;
-  color: white;
-  text-shadow: 0 0 25px white;
+const Subtitle = styled(SectionTitle)`
+  display: flex;
+  align-items: center;
+  justify-content: right;
 
   svg {
     margin-right: 14px;
-  }
 
-  @media (max-width: 1399px) {
-    font-size: ${pxToRem(72)};
-  }
-`
+    @media (max-width: 991px) {
+      width: 64px;
+    }
 
-const Separator = styled.div`
-  width: 100%;
-  height: 1px;
-  background-color: rgba(255, 255, 255, 0.2);
-  margin: 30px 0;
-`
+    @media (max-width: 767px) {
+      width: 52px;
+    }
 
-const ListWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-`
-
-const ListItem = styled.li`
-  position: relative;
-  font-family: Archivo, sans-serif;
-  font-size: ${pxToRem(18)};
-  font-weight: 700;
-  display: inline-block;
-  padding-left: 35px;
-
-  &::before {
-    content: '';
-    display: inline-block;
-    position: absolute;
-    top: 8px;
-    left: 0;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: #e082ff;
-  }
-
-  @media (max-width: 1399px) {
-    font-size: ${pxToRem(16)};
+    @media (max-width: 499px) {
+      width: 48px;
+    }
   }
 `
