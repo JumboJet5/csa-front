@@ -97,7 +97,7 @@ const ComingSoonDescription = styled.div`
   font-size: ${pxToRem(140)};
   font-weight: bold;
   line-height: 0.8;
-  color: rgb(211 139 3 / 43%);
+  color: rgba(255, 184, 3, 0.3);
 
   @media (max-width: 1919px) {
     font-size: ${pxToRem(120)};

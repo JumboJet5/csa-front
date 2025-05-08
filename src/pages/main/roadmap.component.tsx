@@ -66,6 +66,10 @@ const ScreenContainer = styled.div`
   grid-gap: 104px;
 
   @media (max-width: 1199px) {
+    grid-gap: 40px;
+  }
+
+  @media (max-width: 991px) {
     grid-template-columns: 1fr;
     grid-gap: 30px;
   }
@@ -75,7 +79,7 @@ const RoadmapImg = styled.img`
   justify-self: left;
   width: 100%;
 
-  @media (max-width: 1199px) {
+  @media (max-width: 991px) {
     max-width: 500px;
     justify-self: center;
     grid-row: 2 / 3;
