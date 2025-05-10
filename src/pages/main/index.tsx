@@ -4,9 +4,11 @@ import { AboutToken } from './about-token.component.tsx'
 import { AirDrop } from './air-drop.component.tsx'
 import { ComingSoon } from './coming-soon.component.tsx'
 import { EsportsAcademy } from './esports-academy.component.tsx'
+import { EsportsArena } from './esports-arena.component.tsx'
 import { HowItWorks } from './how-it-works.component.tsx'
 import { HowToStart } from './how-to-start.component.tsx'
 import { LastUpdates } from './last-updates.component.tsx'
+import { Marketplace } from './marketplace.component.tsx'
 import { OurPartners } from './our-partners.component.tsx'
 import { Roadmap } from './roadmap.component.tsx'
 
@@ -16,6 +18,8 @@ export const Main: FC = () => {
       <LastUpdates />
       <HowItWorks />
       <HowToStart />
+      <Marketplace />
+      <EsportsArena />
       <EsportsAcademy />
       <OurPartners />
       <AirDrop />
