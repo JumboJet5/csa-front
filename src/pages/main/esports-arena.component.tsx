@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import EsportsArenaUrl from '../../assets/large-images/esports-arena-img.png?url'
 import LogoIcon from '../../assets/logo/icon-logo.svg?react'
 import { pxToRem } from '../../utils/font.ts'
-import { PinkSpan, SectionTitle } from './styles.ts'
+import { Bold, PinkSpan, SectionTitle } from './styles.ts'
 
 export const EsportsArena: FC = () => {
   return (
@@ -178,7 +178,4 @@ const Description = styled.div`
     font-size: ${pxToRem(12)};
     max-width: unset;
   }
-`
-const Bold = styled.b`
-  font-weight: 800;
 `

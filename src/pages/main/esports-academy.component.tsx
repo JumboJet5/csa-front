@@ -2,7 +2,7 @@ import { FC } from 'react'
 import styled from 'styled-components'
 import EsportsAcademyImgUrl from '../../assets/large-images/esports-academy-img.png?url'
 import { pxToRem } from '../../utils/font.ts'
-import { ListItem, ListWrapper, PinkSpan, SectionTitle } from './styles.ts'
+import { Bold, ListItem, ListWrapper, PinkSpan, SectionTitle } from './styles.ts'
 
 export const EsportsAcademy: FC = () => {
   return (
@@ -123,10 +123,6 @@ const DescriptionWrapper = styled.div`
   @media (max-width: 499px) {
     grid-template-columns: 1fr;
   }
-`
-
-const Bold = styled.b`
-  font-weight: 800;
 `
 
 const DescriptionSection1 = styled.div`

@@ -11,6 +11,7 @@ import { LastUpdates } from './last-updates.component.tsx'
 import { Marketplace } from './marketplace.component.tsx'
 import { OurPartners } from './our-partners.component.tsx'
 import { Roadmap } from './roadmap.component.tsx'
+import { Tokenomics } from './tokenomics.component.tsx'
 
 export const Main: FC = () => {
   return (
@@ -18,6 +19,7 @@ export const Main: FC = () => {
       <LastUpdates />
       <HowItWorks />
       <HowToStart />
+      <Tokenomics />
       <Marketplace />
       <EsportsArena />
       <EsportsAcademy />

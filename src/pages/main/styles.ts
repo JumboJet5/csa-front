@@ -85,6 +85,10 @@ export const PinkSpan = styled.span`
   color: #e658b8;
 `
 
+export const Bold = styled.b`
+  font-weight: 800;
+`
+
 export const Separator = styled.div`
   width: 100%;
   height: 1px;
