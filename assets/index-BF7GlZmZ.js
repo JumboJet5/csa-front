@@ -1769,4 +1769,4 @@ Please change the parent <Route path="${G}"> to <Route path="${G==="/"?"*":`${G}
     padding: 16px;
     gap: 100px;
   }
-`;function O6(){return m.jsx(b5,{children:m.jsx(f7,{children:m.jsx(T6,{})})})}const T6=()=>m.jsx(t5,{children:m.jsx(_2,{path:"/",element:m.jsx(b6,{})})});s9.createRoot(document.getElementById("root")).render(m.jsx(f.StrictMode,{children:m.jsx(O6,{})}));
+`;function O6(){return m.jsx(b5,{basename:"/csa-front",children:m.jsx(f7,{children:m.jsx(T6,{})})})}const T6=()=>m.jsx(t5,{children:m.jsx(_2,{path:"/",element:m.jsx(b6,{})})});s9.createRoot(document.getElementById("root")).render(m.jsx(f.StrictMode,{children:m.jsx(O6,{})}));
