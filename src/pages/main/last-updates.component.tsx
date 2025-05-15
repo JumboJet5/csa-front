@@ -14,16 +14,32 @@ export const LastUpdates: FC = () => {
           <LastFeaturesIcon />
           <span>LAST FEATURES</span>
         </SectionLabel>
-        <LastFeaturesImg src={LastFeaturesImgUrl} />
-        <TextBlock>
-          <FeatureDate>25.05.2023</FeatureDate>
-          <Title>PLAY IN YOUR FAVORITE GAMES AND EARN MONEY</Title>
-          <Description>
-            We give you the opportunity to start making money on games even if you are not a professional cyber player !
-            Play your favorite game and earn tokens that you can convert into USDT and exchange for skins, tickets on
-            cyber events and so on !
-          </Description>
-        </TextBlock>
+        <LastFeatureBlockList>
+          <LastFeatureBlock>
+            <LastFeaturesImg src={LastFeaturesImgUrl} />
+            <TextBlock>
+              <FeatureDate>25.05.2023</FeatureDate>
+              <Title>PLAY IN YOUR FAVORITE GAMES AND EARN MONEY</Title>
+              <Description>
+                We give you the opportunity to start making money on games even if you are not a professional cyber
+                player ! Play your favorite game and earn tokens that you can convert into USDT and exchange for skins,
+                tickets on cyber events and so on !
+              </Description>
+            </TextBlock>
+          </LastFeatureBlock>
+          <LastFeatureBlock>
+            <LastFeaturesImg src={LastFeaturesImgUrl} />
+            <TextBlock>
+              <FeatureDate>25.05.2023</FeatureDate>
+              <Title>PLAY IN YOUR FAVORITE GAMES AND EARN MONEY</Title>
+              <Description>
+                We give you the opportunity to start making money on games even if you are not a professional cyber
+                player ! Play your favorite game and earn tokens that you can convert into USDT and exchange for skins,
+                tickets on cyber events and so on !
+              </Description>
+            </TextBlock>
+          </LastFeatureBlock>
+        </LastFeatureBlockList>
       </LastFeaturesWrapper>
       <GamesSectionWrapper>
         <div>
@@ -65,10 +81,11 @@ const ScreenContainer = styled.div`
   }
 `
 const SectionLabel = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
   gap: 10px;
-  position: relative;
+
   font-family: Archivo, sans-serif;
   font-size: ${pxToRem(16)};
   font-weight: 500;
@@ -116,9 +133,62 @@ const LastFeaturesWrapper = styled.div`
   display: grid;
   grid-gap: 16px;
   max-width: 582px;
+`
+
+const LastFeatureBlockList = styled.div`
+  max-height: calc(100vh - 660px);
+  overflow: auto;
+  direction: rtl;
+  margin-left: -20px;
+  padding-left: 15px;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #4986e1;
+    border-radius: 10px;
+  }
+
+  @media (max-width: 1919px) {
+    max-height: none;
+    direction: ltr;
+    transform: rotateX(180deg);
+    margin-left: 0;
+    padding-left: 0;
+    padding-bottom: 12px;
+
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 16px;
+  }
+`
+
+const LastFeatureBlock = styled.div`
+  display: grid;
+  grid-gap: 16px;
+  direction: ltr;
 
   ${Title} {
     max-width: 525px;
+  }
+
+  & + & {
+    margin-top: 40px;
+  }
+
+  @media (max-width: 1919px) {
+    width: 100%;
+    flex: 1 0 100%;
+    transform: rotateX(180deg);
+
+    & + & {
+      margin-top: 0;
+      margin-left: 40px;
+    }
   }
 
   @media (max-width: 767px) {

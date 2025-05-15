@@ -10,6 +10,7 @@ import { HowToStart } from './how-to-start.component.tsx'
 import { LastUpdates } from './last-updates.component.tsx'
 import { Marketplace } from './marketplace.component.tsx'
 import { OurPartners } from './our-partners.component.tsx'
+import { Referrals } from './referrals.component.tsx'
 import { Roadmap } from './roadmap.component.tsx'
 import { Tokenomics } from './tokenomics.component.tsx'
 
@@ -20,6 +21,7 @@ export const Main: FC = () => {
       <HowItWorks />
       <HowToStart />
       <Tokenomics />
+      <Referrals />
       <Marketplace />
       <EsportsArena />
       <EsportsAcademy />

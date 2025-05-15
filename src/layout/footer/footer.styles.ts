@@ -14,6 +14,10 @@ export const FooterContainer = styled.div`
   background-color: #06020c;
   z-index: 1000;
 
+  @media (max-width: 1199px) {
+    position: relative;
+  }
+
   @media (max-width: 991px) {
     width: calc(100% - 88px);
     flex-direction: column;
