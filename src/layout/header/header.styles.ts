@@ -21,6 +21,7 @@ export const HeaderContainer = styled.div`
   .logo,
   .small-logo {
     user-select: none;
+    pointer-events: none;
     width: -webkit-fill-available;
   }
 
