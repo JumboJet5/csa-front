@@ -1,8 +1,10 @@
 import { FC } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router'
+import { ToastContainer, Zoom } from 'react-toastify'
 import { Layout } from './layout'
 import { Main } from './pages/main'
 import { ProfilePage } from './pages/profile'
+import 'react-toastify/dist/ReactToastify.css'
 
 export function App() {
   return (
@@ -10,6 +12,7 @@ export function App() {
       <Layout>
         <Pages />
       </Layout>
+      <ToastContainer transition={Zoom} closeButton={false} icon={false} />
     </BrowserRouter>
   )
 }

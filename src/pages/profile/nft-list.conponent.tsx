@@ -1,5 +1,6 @@
 import classNames from 'classnames'
-import { FC, useState } from 'react'
+import copy from 'copy-to-clipboard'
+import { FC, useCallback, useState } from 'react'
 import styled from 'styled-components'
 import ChainIcon from '../../assets/common/chain-icon.svg?react'
 import ColoredNftIcon from '../../assets/common/colored-nft-icon.svg?react'
@@ -13,10 +14,16 @@ import UserIcon from '../../assets/common/user-icon.svg?react'
 import NftLevel2Url from '../../assets/nft/nft-level2_0.png?url'
 import NftLevel5Url from '../../assets/nft/nft-level5_0.png?url'
 import { pxToRem } from '../../utils/font.ts'
+import { commonSuccessToast } from '../../utils/toast.tsx'
 
 type FilterType = 'new' | 'hot' | 'favourite' | 'owned' | 'rewards'
 export const NftList: FC = () => {
   const [filterType, setFilterType] = useState<FilterType>('new')
+
+  const onCopy = useCallback(() => {
+    copy('fjty371x')
+    commonSuccessToast('Referral link copied!')
+  }, [])
 
   return (
     <NftListContainer>
@@ -52,7 +59,7 @@ export const NftList: FC = () => {
             <span>MY REWARDS</span>
           </NftFilterLabel>
         </NftFilterRowWrapper>
-        <ReferralLinkButton>
+        <ReferralLinkButton onClick={onCopy}>
           <ChainIcon /> <span>REFERRAL LINK:</span> <Yellow>fjty371x</Yellow> <CopyIcon />
         </ReferralLinkButton>
       </NftFilterRow>
@@ -67,8 +74,14 @@ export const NftList: FC = () => {
 }
 
 const NftCard: FC<{ imgUrl: string; level: number }> = ({ imgUrl, level }) => {
+  const [isFavourite, setIsFavourite] = useState(false)
+  const toggleIsFavourite = useCallback(() => setIsFavourite((prev) => !prev), [])
+
   return (
     <NftInfoCard>
+      <NftFavouriteIconWrapper onClick={toggleIsFavourite} className={classNames({ active: isFavourite })}>
+        <HeartIcon />
+      </NftFavouriteIconWrapper>
       <img src={imgUrl} />
       <NftInfoWrapper>
         <NftGeneralInfoRow>
@@ -111,12 +124,14 @@ const NftFilterRow = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-wrap: wrap;
 `
 
 const NftFilterRowWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-wrap: wrap;
 `
 
 const NftFilterLabel = styled.button`
@@ -197,22 +212,35 @@ const ReferralLinkButton = styled.button`
 `
 
 const NftListWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  flex-wrap: nowrap;
   gap: 16px;
   margin-top: 20px;
-  margin-right: -15px;
   max-height: 380px;
   overflow: auto;
+  padding-bottom: 16px;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #d9d9d933;
+    border-radius: 10px;
+  }
+
+  @media (max-width: 1199px) {
+    margin: 20px -16px 0;
+    padding: 0 16px 16px;
+  }
 `
 const NftInfoCard = styled.div`
+  flex: 0 0 auto;
   position: relative;
   overflow: hidden;
   border-radius: 20px;
-
-  &:hover {
-    cursor: pointer;
-  }
 `
 
 const NftInfoWrapper = styled.div`
@@ -300,6 +328,29 @@ const NftUserLabelTitle = styled.div`
 `
 const NftUserLabelName = styled.div`
   grid-area: name;
+`
+const NftFavouriteIconWrapper = styled.button`
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 40px;
+  height: 40px;
+  background: #ffffff33;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 13px 12px;
+  cursor: pointer;
+
+  &.active {
+    background: #fb35cf33;
+    color: #fb35cf;
+  }
+
+  svg {
+    width: 14px;
+    height: 16px;
+  }
 `
 
 const Yellow = styled.span`

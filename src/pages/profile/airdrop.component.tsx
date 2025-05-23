@@ -36,17 +36,19 @@ export const Airdrop: FC = () => {
           for level 2 referrals.
         </AirdropDescription>
       </AirdropRulesWrapper>
-      <Subtitle>
-        <NftIcon />
-        <span>YOUR LAST PURCHASED NFT</span>
-      </Subtitle>
-      <LastNft src={NftLevel2Url} />
-      <LastNftDetails>
-        <div>
-          <Yellow>256.23</Yellow> <span>USDT</span>
-        </div>
-        <LastNftDate>30.10.23</LastNftDate>
-      </LastNftDetails>
+      <LastNftContainer>
+        <Subtitle>
+          <NftIcon />
+          <span>YOUR LAST PURCHASED NFT</span>
+        </Subtitle>
+        <LastNft src={NftLevel2Url} />
+        <LastNftDetails>
+          <div>
+            <Yellow>256.23</Yellow> <span>USDT</span>
+          </div>
+          <LastNftDate>30.10.23</LastNftDate>
+        </LastNftDetails>
+      </LastNftContainer>
     </AirdropContainer>
   )
 }
@@ -56,14 +58,35 @@ const AirdropContainer = styled.div`
   background-color: #0e0a1399;
   border-radius: 5px;
   padding: 0 18px 14px;
+
+  @media (max-width: 1439px) {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: transparent;
+  }
+
+  @media (max-width: 1199px) {
+    margin: auto;
+  }
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
 `
 
 const AirdropRulesWrapper = styled.div`
+  overflow: hidden;
   position: relative;
   background-color: #1e062f;
   padding: 16px;
   border-radius: 20px;
   box-shadow: inset 0px 1px 0px #ffffff40;
+
+  @media (max-width: 1439px) {
+    max-width: 268px;
+    margin-top: 16px;
+  }
 
   & > * {
     z-index: 1;
@@ -153,8 +176,19 @@ const Subtitle = styled.div`
   }
 `
 
+const LastNftContainer = styled.div`
+  @media (max-width: 1439px) {
+    padding: 0 16px 16px;
+    background-color: #0e0a1399;
+    border-radius: 5px;
+  }
+`
 const LastNft = styled.img`
   width: 100%;
+
+  @media (max-width: 1439px) {
+    max-height: 264px;
+  }
 `
 
 const LastNftDetails = styled.div`

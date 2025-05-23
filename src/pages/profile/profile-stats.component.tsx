@@ -70,6 +70,7 @@ const ReferralsStatsWrapper = styled.div`
   display: flex;
   gap: 18px;
   align-items: center;
+  flex-wrap: wrap;
 `
 const ReferralsStatsLabel = styled.div`
   background-color: #0e0a13e5;
@@ -115,11 +116,40 @@ const UserStatsWrapper = styled.div`
     grid-row: 1 / 3;
     color: #f1dc24;
   }
+
+  @media (max-width: 991px) {
+    background-position-x: center;
+  }
+
+  @media (max-width: 767px) {
+    padding: 24px 44px;
+
+    .user-icon {
+      max-width: 56px;
+    }
+  }
+
+  @media (max-width: 559px) {
+    padding: 16px 24px;
+    grid-gap: 12px;
+
+    .user-icon {
+      grid-row: 1 / 2;
+      max-width: 24px;
+      max-height: 24px;
+      justify-self: center;
+      align-self: center;
+    }
+  }
 `
 const UserStatsLabelWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 18px;
+
+  @media (max-width: 559px) {
+    grid-column: 1 / 3;
+  }
 `
 const UserStatsLabel = styled.div`
   display: flex;
@@ -136,6 +166,10 @@ const UserStatsLabel = styled.div`
     width: 18px;
     height: 18px;
   }
+
+  @media (max-width: 559px) {
+    font-size: ${pxToRem(14)};
+  }
 `
 
 export const StatsUsername = styled.div`
@@ -147,6 +181,16 @@ export const StatsUsername = styled.div`
   margin: 0;
   color: white;
   text-shadow: 0 0 25px currentColor;
+
+  @media (max-width: 767px) {
+    font-size: ${pxToRem(28)};
+    line-height: 24px;
+  }
+
+  @media (max-width: 559px) {
+    font-size: ${pxToRem(24)};
+    line-height: 20px;
+  }
 `
 
 const Thin = styled.span`
