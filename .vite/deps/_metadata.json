@@ -1,0 +1,64 @@
+{
+  "hash": "acdbe8df",
+  "configHash": "10fec347",
+  "lockfileHash": "e1c873a9",
+  "browserHash": "2b983cea",
+  "optimized": {
+    "react/jsx-dev-runtime": {
+      "src": "../../node_modules/react/jsx-dev-runtime.js",
+      "file": "react_jsx-dev-runtime.js",
+      "fileHash": "df1177bc",
+      "needsInterop": true
+    },
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "09829894",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "218e063b",
+      "needsInterop": true
+    },
+    "react-router": {
+      "src": "../../node_modules/react-router/dist/development/index.mjs",
+      "file": "react-router.js",
+      "fileHash": "28e57ef5",
+      "needsInterop": false
+    },
+    "react-toastify": {
+      "src": "../../node_modules/react-toastify/dist/index.mjs",
+      "file": "react-toastify.js",
+      "fileHash": "5d205869",
+      "needsInterop": false
+    },
+    "styled-components": {
+      "src": "../../node_modules/styled-components/dist/styled-components.browser.esm.js",
+      "file": "styled-components.js",
+      "fileHash": "a94f75c8",
+      "needsInterop": false
+    },
+    "classnames": {
+      "src": "../../node_modules/classnames/index.js",
+      "file": "classnames.js",
+      "fileHash": "1d207b6e",
+      "needsInterop": true
+    },
+    "copy-to-clipboard": {
+      "src": "../../node_modules/copy-to-clipboard/index.js",
+      "file": "copy-to-clipboard.js",
+      "fileHash": "1dd91fb7",
+      "needsInterop": true
+    }
+  },
+  "chunks": {
+    "chunk-3527N3GG": {
+      "file": "chunk-3527N3GG.js"
+    },
+    "chunk-EQCVQC35": {
+      "file": "chunk-EQCVQC35.js"
+    }
+  }
+}

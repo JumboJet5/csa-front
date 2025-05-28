@@ -23,6 +23,9 @@ export const NavigationMenu: FC = () => {
             <NavItem onClick={toggleMenu} to={'/profile'}>
               PROFILE
             </NavItem>
+            <NavItem onClick={toggleMenu} to={'/nft'}>
+              NFT
+            </NavItem>
           </NavList>
           <Socials />
         </NavigationBar>

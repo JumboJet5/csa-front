@@ -5,6 +5,7 @@ import { Layout } from './layout'
 import { Main } from './pages/main'
 import { ProfilePage } from './pages/profile'
 import 'react-toastify/dist/ReactToastify.css'
+import { PurchaseNft } from './pages/purchase-nft'
 
 export function App() {
   return (
@@ -22,6 +23,8 @@ const Pages: FC = () => {
     <Routes>
       <Route path="/" element={<Main />}></Route>
       <Route path="/profile" element={<ProfilePage />}></Route>
+      <Route path="/nft" element={<PurchaseNft />}></Route>
+      <Route path="*" element={<Main />}></Route>
     </Routes>
   )
 }
