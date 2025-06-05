@@ -66,6 +66,7 @@ const NftSelectorContainer = styled.div`
   min-width: 100px;
   width: 100%;
   box-sizing: border-box;
+  z-index: 10000;
 
   font-family: Archive, sans-serif;
   font-size: ${pxToRem(14)};
@@ -78,10 +79,15 @@ const NftSelectorContainer = styled.div`
     top: 50%;
     transform: translateY(-50%);
     z-index: 100;
+    transition: transform 0.2s ease-in-out;
   }
 
   &.open .arrow {
-    transform: translateY(-50%) rotateY(180deg);
+    transform: translateY(-50%) rotateX(180deg);
+  }
+
+  @media (max-width: 767px) {
+    max-width: 100%;
   }
 `
 
@@ -93,6 +99,10 @@ const SelectedNftLevelWrapper = styled.div`
   padding: 0 32px;
   border: 1px #8b898999 solid;
   border-radius: 32px;
+
+  &:hover {
+    background-color: #00000099;
+  }
 
   ${NftSelectorContainer}.open & {
     display: none;

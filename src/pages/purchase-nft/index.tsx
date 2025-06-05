@@ -1,11 +1,11 @@
 import { FC, useEffect, useState } from 'react'
 import styled from 'styled-components'
 import NftIcon from '../../assets/common/nft-icon.svg?react'
-import NftLevel2Url from '../../assets/nft/nft-level2_0.png?url'
 import { GradientButton } from '../../components/gradient-button.component.tsx'
 import { PointSelector } from '../../components/point-selector.component.tsx'
 import { NftLevelEnum } from '../../core/enums'
 import { pxToRem } from '../../utils/font.ts'
+import { NftCard } from './nft-card.component.tsx'
 import { NftLevelSelector } from './nft-level-selector.component.tsx'
 
 export const PurchaseNft: FC = () => {
@@ -19,12 +19,12 @@ export const PurchaseNft: FC = () => {
       <LevelRow>
         <NftIcon />
         <span>
-          NFT <PinkSpan>{nftLvl + 1}</PinkSpan> LEVEL <GreySpan>(0000{nftIndex})</GreySpan>
+          NFT <PinkSpan>{nftLvl + 1}</PinkSpan> LEVEL <GreySpan>(0000{nftIndex + 1})</GreySpan>
         </span>
       </LevelRow>
       <PurchaseCard>
         <NftWrapper>
-          <NftImage src={NftLevel2Url} />
+          <NftCard level={nftLvl} index={nftIndex} />
           <PointSelector size={3} currentIndex={nftIndex} setCurrentIndex={setNftIndex} />
         </NftWrapper>
         <PurchaseDescriptionContent>
@@ -67,6 +67,9 @@ const PurchaseNftContainer = styled.div`
 
   @media (max-width: 599px) {
     margin: 32px 0 40px;
+    overflow-x: hidden;
+    padding-top: 60px;
+    padding-bottom: 120px;
   }
 `
 
@@ -75,6 +78,7 @@ const LevelRow = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-left: 56px;
 
   svg {
     color: #736d7a;
@@ -129,7 +133,7 @@ const PurchaseDescriptionContent = styled.div`
 
 const NftWrapper = styled.div`
   position: relative;
-  --y-offset: -98px;
+  --y-offset: -80px;
   top: var(--y-offset);
   margin-bottom: var(--y-offset);
 
@@ -137,14 +141,6 @@ const NftWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 28px;
-`
-
-const NftImage = styled.img`
-  min-width: 406px;
-  @media (max-width: 499px) {
-    min-width: unset;
-    width: 100%;
-  }
 `
 
 const Title = styled.h3`
@@ -181,6 +177,8 @@ const ControlRow = styled.div`
   gap: 32px;
   margin-top: 54px;
   grid-column: 1 / -1;
+  max-width: 720px;
+  width: 100%;
 
   @media (max-width: 1199px) {
     justify-self: center;
@@ -195,9 +193,9 @@ const ControlRow = styled.div`
 const MintButton = styled(GradientButton)`
   width: 100%;
 `
-export const PinkSpan = styled.span`
+const PinkSpan = styled.span`
   color: #e658b8;
 `
-export const GreySpan = styled.span`
+const GreySpan = styled.span`
   color: #736d7a;
 `

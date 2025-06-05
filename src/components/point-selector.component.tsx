@@ -10,7 +10,7 @@ export const PointSelector: FC<{
   size: number
 }> = ({ size, currentIndex, setCurrentIndex }) => {
   const nextIndex = useCallback(() => setCurrentIndex((prev) => (prev + 1) % size), [size, setCurrentIndex])
-  const prevIndex = useCallback(() => setCurrentIndex((prev) => (prev - 1) % size), [size, setCurrentIndex])
+  const prevIndex = useCallback(() => setCurrentIndex((prev) => (prev - 1 + size) % size), [size, setCurrentIndex])
 
   const points = useMemo(() => new Array(size).fill(0), [size])
 
