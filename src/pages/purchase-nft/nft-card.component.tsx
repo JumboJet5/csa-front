@@ -108,13 +108,15 @@ const NftPurchaseImage: FC<WithClassName & { level: NftLevelEnum; index: number 
 const NftCardContainer = styled.div`
   position: relative;
   min-width: 406px;
+  min-height: 406px;
 
   .hidden-svg {
     position: absolute;
   }
 
   @media (max-width: 499px) {
-    min-width: unset;
+    min-width: calc(100vw - 40px);
+    min-height: calc(100vw - 40px);
     width: 100%;
   }
 `
@@ -153,6 +155,8 @@ const prevCardDisapire = keyframes`
 `
 const NftPurchaseImageWrapper = styled.div`
   position: relative;
+  width: 100%;
+  height: 100%;
 
   &.prev {
     position: absolute;

@@ -8,18 +8,22 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "predeploy": "npm run build && copy ./dist/index.html ./dist/404.html",
+    "deploy": "gh-pages -d dist",
+    "deploy:windows": "yarn run build && copy .\\dist\\index.html .\\dist\\404.html && gh-pages -d dist"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.80.6",
+    "classnames": "^2.5.1",
+    "copy-to-clipboard": "^3.3.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router": "^7.5.3",
+    "react-toastify": "^11.0.5",
     "styled-components": "^6.1.17",
+    "viem": "^2.30.6",
     "vite-plugin-svgr": "^4.3.0",
-    "classnames": "^2.5.1",
-    "copy-to-clipboard": "^3.3.3",
-    "react-toastify": "^11.0.5"
+    "wagmi": "^2.15.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.22.0",
